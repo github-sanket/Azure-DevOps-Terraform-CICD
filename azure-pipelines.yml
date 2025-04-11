@@ -60,7 +60,6 @@ stages:
          inputs:
           provider: 'azurerm'
           command: 'plan'
-          commandOptions: 'plan'
           environmentServiceNameAzureRM: 'Pay-As-You-Go(7ac6d4db-4e4e-4190-9ecb-6bfc97e17510)'
            
   - stage: Apply
@@ -81,8 +80,7 @@ stages:
           backendAzureRmKey: ${{ parameters.Key }}           
           
       - task: TerraformTaskV4@4
-        displayName: terraforn Apply
         inputs:
           provider: 'azurerm'
           command: 'apply'
-          environmentServiceNameAzureRM: 
+          environmentServiceNameAzureRM: 'Pay-As-You-Go(7ac6d4db-4e4e-4190-9ecb-6bfc97e17510)'
