@@ -32,7 +32,11 @@ stages:
     displayName: plan
     jobs:
     - job: 
-      steps: 
+      steps:
+       - task: TerraformInstaller@1
+         inputs:
+          terraformVersion: 'latest'
+      
       
        - task: TerraformTaskV4@4
          displayName: terraforn init
