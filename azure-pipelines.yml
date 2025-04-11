@@ -16,7 +16,7 @@ parameters:
   #storage account name
   - name: Stgaccount
     type: string
-    default: 'azuredevopscicd_1742494212779'
+    default: 'azuredevopscicd'
   #Container name
   - name:  container
     type: string
