@@ -54,12 +54,14 @@ stages:
          inputs:
            provider: 'azurerm'
            command: 'validate'
-           
+
        - task: TerraformTaskV4@4
          displayName: terraforn plan
          inputs:
-           provider: 'azurerm'
-           command: 'plan'
+          provider: 'azurerm'
+          command: 'plan'
+          commandOptions: 'plan'
+          environmentServiceNameAzureRM: 'Pay-As-You-Go(7ac6d4db-4e4e-4190-9ecb-6bfc97e17510)'
            
   - stage: Apply
     displayName: Apply
@@ -67,20 +69,20 @@ stages:
     - job: 
       steps: 
       
-       - task: TerraformTaskV4@4
-         displayName: terraforn init
-         inputs:
-           provider: 'azurerm'
-           command: 'init'
-           backendServiceArm: 'Pay-As-You-Go(7ac6d4db-4e4e-4190-9ecb-6bfc97e17510)'
-           backendAzureRmResourceGroupName: ${{ parameters.rgname }}
-           backendAzureRmStorageAccountName: ${{ parameters.Stgaccount }}
-           backendAzureRmContainerName: ${{ parameters.container }}
-           backendAzureRmKey: ${{ parameters.Key }}           
-           
-       - task: TerraformTaskV4@4
-         displayName: terraforn Apply
-         inputs:
-           provider: 'azurerm'
-           command: 'apply'
-           environmentServiceNameAzureRM: 
+      - task: TerraformTaskV4@4
+        displayName: terraforn init
+        inputs:
+          provider: 'azurerm'
+          command: 'init'
+          backendServiceArm: 'Pay-As-You-Go(7ac6d4db-4e4e-4190-9ecb-6bfc97e17510)'
+          backendAzureRmResourceGroupName: ${{ parameters.rgname }}
+          backendAzureRmStorageAccountName: ${{ parameters.Stgaccount }}
+          backendAzureRmContainerName: ${{ parameters.container }}
+          backendAzureRmKey: ${{ parameters.Key }}           
+          
+      - task: TerraformTaskV4@4
+        displayName: terraforn Apply
+        inputs:
+          provider: 'azurerm'
+          command: 'apply'
+          environmentServiceNameAzureRM: 
