@@ -1,20 +1,47 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+A fully automated, version-controlled CI/CD pipeline to provision and manage Azure infrastructure with confidence and repeatability. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## 🚀 Overview
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+- **IaC Tool**: [Terraform](https://www.terraform.io/)
+- **CI/CD Platform**: [Azure DevOps Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/)
+- **Cloud Provider**: Microsoft Azure
+- **Source Code**: [GitHub Repo](https://github.com/github-sanket/Azure-DevOps-Terraform-CICD)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+---
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## 🛠️ Features
+
+- Infrastructure provisioning using Terraform
+- CI/CD pipeline for validating and applying Terraform configurations
+- Azure DevOps YAML pipeline for automation
+- Version-controlled infrastructure code (Git)
+- Environment separation (Dev / QA / Prod)
+
+## 📁 Project Structure
+
+```bash
+Azure-DevOps-Terraform-CICD/
+│
+├── terraform/                   # Terraform scripts
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
+│
+├── pipelines/                   # Azure DevOps pipeline definitions
+│   └── azure-pipelines.yml
+│
+├── .gitignore
+└── README.md
+
+##How to Use This Repository
+1]Fork or Clone this Repository
+2]Connect GitHub to Azure DevOps
+3]Create a New Pipeline
+4]Create a Service Connection
+    Go to Project Settings → Service connections
+    Create a new Azure Resource Manager connection
+5]Configure Your Terraform Files
+    Update main.tf, variables.tf, and backend.tf as needed for your Azure infrastructure
+6]Run the Pipeline
+
